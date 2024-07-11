@@ -5,7 +5,7 @@ pyvenv.cfg
 share
 Library
 test_images
-plant_disease_model_1_latest.pt
+# plant_disease_model_1_latest.pt
 __pycache__
 
 
