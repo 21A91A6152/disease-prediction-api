@@ -29,18 +29,20 @@ def prediction(image_path):
 
 
 
-app = Flask(__name__)
-application = app
+# app = Flask(__name__)
+# application = app
+
+application = Flask(__name__)
 
 # Define a route for handling HTTP GET requests to the root URL
-@app.route('/', methods=['GET'])
+@application.route('/', methods=['GET'])
 def get_data():
     data = {
         "message":"API is Running"
     }
     return jsonify(data)
-CORS(app)
-@app.route('/submit', methods=['POST'])
+CORS(application)
+@application.route('/submit', methods=['POST'])
 def submit():
     if request.method == 'POST':
         try:
@@ -81,5 +83,5 @@ def submit():
             return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    application.run()
 
